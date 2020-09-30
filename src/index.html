@@ -32,7 +32,7 @@
       <div class="flex flex-1 items-center text-white mr-6">
         <a
           class="text-white no-underline hover:text-white hover:no-underline"
-          href="#"
+          href="/"
         >
           <img
             src="images/gregghoush-white.png"
@@ -81,6 +81,7 @@
             <a
               class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-picton text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-42"
               href="https://www.twitch.tv/subs/gregghoush"
+              target="_blank"
               @click="isOpen = false"
               ><i class="fab fa-twitch"></i> <span class="ml-2">Subscribe</span>
             </a>
@@ -89,6 +90,7 @@
             <a
               class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-teal-500 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-42"
               href="https://streamlabs.com/gregghoush/tip"
+              target="_blank"
               @click="isOpen = false"
               ><i class="fas fa-donate"></i> <span class="ml-2">Tip</span>
             </a>
@@ -97,6 +99,7 @@
             <a
               class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-red-600 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg w-42"
               href="/"
+              target="_blank"
               @click="isOpen = false"
               ><i class="fas fa-tshirt"></i> <span class="ml-2">Merch</span>
             </a>
@@ -112,37 +115,50 @@
         >
           The Gregg Housh Show
         </h1>
-        <span
-          class="block my-4 text-xl md:text-2xl lg:text-3xl font-bold leading-tight text-gray-100"
+        <p
+          class="my-4 mb-8 leading-tight text-xl md:text-2xl lg:text-3xl font-bold text-gray-100"
         >
           Follow and subscribe to our accounts to see the show when it launches!
-        </span>
+        </p>
 
-        <button
-          class="mx-auto md:mx-2 hover:bg-opacity-75 bg-twitch text-gray-100 font-extrabold rounded my-2 md:my-6 py-2 px-6 shadow-lg w-42"
-        >
-          <i class="fab fa-twitch"></i> <span class="ml-2">Twitch</span>
-        </button>
-        <button
-          class="mx-auto md:mx-2 hover:bg-opacity-75 bg-youtube text-gray-100 font-extrabold rounded my-2 md:my-6 py-2 px-6 shadow-lg w-42"
-        >
-          <i class="fab fa-youtube"></i> <span class="ml-2">YouTube</span>
-        </button>
-        <button
-          class="mx-auto md:mx-2 hover:bg-opacity-75 bg-facebook text-gray-100 font-extrabold rounded my-2 md:my-6 py-2 px-6 shadow-lg w-42"
-        >
-          <i class="fab fa-facebook"></i> <span class="ml-2">Facebook</span>
-        </button>
-        <button
-          class="mx-auto md:mx-2 hover:bg-opacity-75 bg-twitter text-gray-100 font-extrabold rounded my-2 md:my-6 py-2 px-6 shadow-lg w-42"
-        >
-          <i class="fab fa-twitter"></i> <span class="ml-2">Twitter</span>
-        </button>
-        <button
-          class="mx-auto md:mx-2 hover:bg-opacity-75 bg-instagram text-gray-700 font-extrabold rounded my-2 md:my-6 py-2 px-6 shadow-lg w-42"
-        >
-          <i class="fab fa-instagram"></i> <span class="ml-2">Instagram</span>
-        </button>
+        <div>
+          <a
+            href="https://www.twitch.tv/gregghoush"
+            target="_blank"
+            class="mx-auto md:mx-2 hover:bg-opacity-75 bg-twitch text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-6 shadow-lg w-42"
+          >
+            <i class="fab fa-twitch"></i>
+            <span class="ml-2">Twitch</span>
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UC-igeMJ4Azc1HgRqeK4Rn-Q"
+            target="_blank"
+            class="mx-auto md:mx-2 hover:bg-opacity-75 bg-youtube text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-6 shadow-lg w-42"
+          >
+            <i class="fab fa-youtube"></i> <span class="ml-2">YouTube</span>
+          </a>
+          <a
+            href="https://www.facebook.com/gregghoushshow"
+            target="_blank"
+            class="mx-auto md:mx-2 hover:bg-opacity-75 bg-facebook text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-6 shadow-lg w-42"
+          >
+            <i class="fab fa-facebook"></i> <span class="ml-2">Facebook</span>
+          </a>
+          <a
+            href="https://twitter.com/gregghoushshow"
+            target="_blank"
+            class="mx-auto md:mx-2 hover:bg-opacity-75 bg-twitter text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-6 shadow-lg w-42"
+          >
+            <i class="fab fa-twitter"></i> <span class="ml-2">Twitter</span>
+          </a>
+          <a
+            href="https://instagram.com/gregghoush"
+            target="_blank"
+            class="mx-auto md:mx-2 hover:bg-opacity-75 bg-instagram text-gray-700 font-extrabold rounded my-2 md:my-6 py-4 px-6 shadow-lg w-42"
+          >
+            <i class="fab fa-instagram"></i> <span class="ml-2">Instagram</span>
+          </a>
+        </div>
       </div>
 
       <div class="flex items-center w-full mx-auto content-end pb-10">
@@ -197,9 +213,13 @@
         class="container flex flex-wrap mx-auto items-center justify-center text-gray-100"
       >
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-twitch rounded-lg h-32 shadow-blue border border-gray-600"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-twitch rounded-lg h-32 shadow-blue border border-gray-600"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://www.twitch.tv/gregghoush"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-twitch fa-5x"></i>
             </div>
@@ -216,9 +236,13 @@
         </div>
 
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-youtube rounded-lg h-32 shadow-blue border border-gray-500"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-youtube rounded-lg h-32 shadow-blue border border-gray-500"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://www.youtube.com/channel/UC-igeMJ4Azc1HgRqeK4Rn-Q"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-youtube fa-5x"></i>
             </div>
@@ -235,15 +259,19 @@
         </div>
 
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-twitter rounded-lg h-32 shadow-blue border border-gray-500"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-twitter rounded-lg h-32 shadow-blue border border-gray-500"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://twitter.com/gregghoushshow"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-twitter fa-5x"></i>
             </div>
             <div class="w-4/5 border-l-2 p-4">
               <p class="text-grey-100 font-bold text-4xl leading-none">
-                Twitter
+                Twitter (Show)
               </p>
               <p>Find more highlights and extra videos!</p>
               <span class="block text-right m-2">
@@ -254,9 +282,13 @@
         </div>
 
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-facebook rounded-lg h-32 shadow-blue border border-gray-500"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-facebook rounded-lg h-32 shadow-blue border border-gray-500"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://www.facebook.com/gregghoushshow"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-facebook fa-5x"></i>
             </div>
@@ -273,9 +305,13 @@
         </div>
 
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-instagram rounded-lg h-32 shadow-blue border border-gray-300 text-gray-800"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-instagram rounded-lg h-32 shadow-blue border border-gray-300 text-gray-800"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://instagram.com/gregghoush"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-instagram fa-5x"></i>
             </div>
@@ -292,15 +328,19 @@
         </div>
 
         <div
-          class="flex-initial m-2 p-4 w-full overflow-hidden md:w-5/12 bg-twitter rounded-lg h-32 shadow-lg border border-gray-500"
+          class="flex-initial m-2 w-full overflow-hidden md:w-5/12 bg-twitter rounded-lg h-32 shadow-lg border border-gray-500"
         >
-          <a href="#" class="flex items-center h-32 -my-4">
+          <a
+            href="https://twitter.com/gregghoush"
+            target="_blank"
+            class="flex items-center h-32 p-4"
+          >
             <div class="mr-4 w-1/5 text-center">
               <i class="fab fa-twitter fa-5x"></i>
             </div>
             <div class="w-4/5 border-l-2 p-4">
               <p class="text-grey-100 font-bold text-4xl leading-none">
-                Personal Twitter
+                Twitter (Personal)
               </p>
               <p>Find more highlights and extra videos!</p>
               <span class="block text-right m-2">
