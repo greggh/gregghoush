@@ -14,6 +14,9 @@ module.exports = {
         youtube: "#ff0100",
         picton: "#49aaf1",
       },
+      boxShadow: {
+        blue: "0 4px 14px 0 rgba(19, 51, 81, 0.39)",
+      },
     },
   },
   variants: {},

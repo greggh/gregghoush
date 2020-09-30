@@ -7,9 +7,9 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rm -rf ./dist/*",
+    "clean": "rm -rf ./dist/* && rm -rf ./.cache/*",
     "start": "parcel src/index.html",
-    "build": "rm -rf ./dist/* && parcel build src/index.html"
+    "build": "rm -rf ./dist/* && rm -rf ./.cache/* && parcel build src/index.html"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
