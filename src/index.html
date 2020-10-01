@@ -438,7 +438,7 @@
         <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
       </div>
 
-      <h3 class="my-8 text-3xl font-extrabold text-gray-200">
+      <h3 class="my-8 px-12 text-3xl font-extrabold text-gray-200">
         Want to come on the show? A sponsor looking to join the team?
       </h3>
 
@@ -446,7 +446,7 @@
         name="contact"
         method="POST"
         data-netlify="true"
-        class="mx-auto w-full md:w-1/2"
+        class="mx-auto w-full px-12 md:w-1/2"
       >
         <div class="pb-4">
           <input
@@ -482,121 +482,129 @@
       </form>
     </section>
 
-    <!--Footer-->
-    <footer class="bg-white">
-      <div class="container mx-auto mt-8 px-8">
-        <div class="w-full flex flex-col md:flex-row py-6">
-          <div class="flex-1 mb-6 pr-10">
-            <a
-              class="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-              href="#"
-            >
-              <img src="images/the-gregg-housh-show.png" />
-            </a>
-          </div>
+    <div class="bg-gray-100" x-data="{ isPrivacyPolicyOpen: false }">
+      <section
+        class="bg-gray-400 w-full mx-auto text-center py-24"
+        x-show="isPrivacyPolicyOpen"
+      >
+        <h2
+          class="w-full mb-8 text-5xl font-black leading-tight text-center text-gray-700 px-12"
+        >
+          Privacy Policy
+        </h2>
+        <div class="w-full">
+          <div class="h-1 mx-auto bg-gray-600 w-1/6 opacity-50 my-0 py-0"></div>
+        </div>
 
-          <div class="flex-1">
-            <p class="uppercase font-extrabold text-gray-500 md:mb-6">Links</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >FAQ</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Help</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Support</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase font-extrabold text-gray-500 md:mb-6">Legal</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Terms</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Privacy</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase font-extrabold text-gray-500 md:mb-6">Social</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Facebook</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Linkedin</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Twitter</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase font-extrabold text-gray-500 md:mb-6">
-              Company
-            </p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Official Blog</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >About Us</a
-                >
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  class="font-light no-underline hover:underline text-gray-800 hover:text-orange-500"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+        <div class="container mx-auto text-left p-12">
+          <p class="text-sm mb-4">
+            This policy will explain areas of this website that may affect your
+            privacy and personal details, how we process, collect, manage and
+            store those details and how your rights under the GDPR, DPA & PECR
+            are adhered to. Our contact information is provided if you have any
+            questions.
+          </p>
+
+          <h3 class="font-extrabold text-gray-700 uppercase">
+            Website Visitor Tracking
+          </h3>
+
+          <p class="text-sm mb-4">
+            This websites partners use tracking software to monitor its visitors
+            to better understand how they use it. The software will save a
+            cookie to your computers hard drive in order to track and monitor
+            your engagement and usage of the website, but will not store, save
+            or collect personal information.
+          </p>
+
+          <h3 class="font-extrabold text-gray-700 uppercase">
+            Contact & Communication With us
+          </h3>
+
+          <p class="text-sm mb-4">
+            Users contacting us through this website do so at their own
+            discretion and provide any such personal details requested at their
+            own risk. Your personal information is kept private and stored
+            securely until a time it is no longer required or has no use. Where
+            we have clearly stated and made you aware of the fact, and where you
+            have given your express permission, we may use your details to send
+            you products/services information through a mailing list system.
+            This is done in accordance with the regulations named in 'The
+            policy' above.
+          </p>
+
+          <h3 class="font-extrabold text-gray-700 uppercase">
+            External Website Links & Third Parties
+          </h3>
+
+          <p class="text-sm">
+            Although we only look to include quality, safe and relevant external
+            links, users are advised to adopt a policy of caution before
+            clicking any external web links mentioned throughout this website.
+          </p>
+        </div>
+
+        <div class="mx-auto w-full md:w-1/2">
+          <div>
+            <button
+              class="inline-block mx-auto hover:bg-opacity-75 bg-gray-800 text-gray-200 font-extrabold text-lg rounded py-4 px-8 shadow-lg w-40"
+              @click=" isPrivacyPolicyOpen = false"
+            >
+              <i class="fas fa-times-circle"></i>
+              <span class="ml-2">Close</span>
+            </button>
           </div>
         </div>
-      </div>
-    </footer>
+      </section>
+      <!--Footer-->
+      <footer class="bg-gray-100">
+        <div class="container mx-auto mt-4 px-8">
+          <div
+            class="w-full flex flex-col md:flex-row justify-center items-center"
+          >
+            <div class="flex-1 mb-4 pr-10">
+              <a
+                class="text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                href="#"
+              >
+                <img src="images/gregghoush-footer-logo.png" />
+              </a>
+            </div>
+
+            <div class="flex-1 text-center">
+              <a
+                class="uppercase underline font-bold text-gray-700 md:mb-6 cursor-pointer"
+                @click="isPrivacyPolicyOpen = !isPrivacyPolicyOpen;
+                $nextTick(() => { window.scrollTo(0,document.body.scrollHeight) });"
+              >
+                Privacy Policy
+              </a>
+            </div>
+            <div class="flex-1 text-center">
+              <a
+                class="uppercase underline font-bold text-gray-700 md:mb-6"
+                href="https://www.twitch.tv/subs/gregghoush"
+                >Susbscribe</a
+              >
+            </div>
+            <div class="flex-1 text-center">
+              <a
+                class="uppercase underline font-bold text-gray-700 md:mb-6"
+                href="https://streamlabs.com/gregghoush/tip"
+                >Tip</a
+              >
+            </div>
+            <div class="flex-1 text-center">
+              <a
+                class="uppercase underline font-bold text-gray-700 md:mb-6"
+                href="/"
+                >Merch</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="index.js"></script>
   </body>
