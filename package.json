@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf ./dist/* && rm -rf ./.cache/*",
     "start": "parcel src/index.html",
-    "build": "rm -rf ./dist/* && rm -rf ./.cache/* && parcel build src/index.html"
+    "build": "rm -rf ./dist/* && rm -rf ./.cache/* && parcel build src/index.html && cp ./src/assets/* ./dist/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
