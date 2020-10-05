@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "npm update"
+    }
+  },
+  "identifier" : "AC609D3C-C57B-4C4C-A9AD-409D8B047C13"
+}
