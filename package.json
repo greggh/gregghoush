@@ -10,13 +10,16 @@
   "config": {
     "input": "src/",
     "intermediate": "tmp/",
-    "output": "dist/"
+    "output": "dist/",
+    "cache": ".cache/"
   },
   "scripts": {
-    "clean": "rimraf ./dist/* ./.cache/*",
-    "start": "parcel src/index.html",
-    "parcel:build": "parcel build src/index.html && cp ./src/assets/* ./dist/",
-    "build": "cross-env TARGET_ENV=production run-s clean parcel:build"
+    "clean": "rimraf $npm_package_config_output* $npm_package_config_cache*",
+    "parcel:watch": "parcel src/index.html",
+    "sitemap:build": "npx sitemap-static --prefix=https://gregghoush.com/ $npm_package_config_output > $npm_package_config_output/sitemap.xml",
+    "parcel:build": "parcel build $npm_package_config_input*.html --out-dir $npm_package_config_output && cp ./src/assets/* $npm_package_config_output",
+    "watch": "run-s clean parcel:watch",
+    "build": "cross-env TARGET_ENV=production run-s clean parcel:build sitemap:build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
@@ -25,6 +28,7 @@
     "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
+    "@astronomersiva/sitemap-static": "^1.1.0",
     "@parcel/optimizer-htmlnano": "^2.0.0-alpha.3",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.0.0",
