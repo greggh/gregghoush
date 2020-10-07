@@ -1,9 +1,0 @@
-{
-  "actions" : {
-    "build" : {
-      "enabled" : true,
-      "script" : "npm install"
-    }
-  },
-  "identifier" : "E3A5B847-4A63-45E8-95B4-04C97250E0CC"
-}

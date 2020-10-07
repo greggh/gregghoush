@@ -1,49 +1,20 @@
 {
-  "name": "thegregghoushshow",
-  "version": "1.0.0",
-  "description": "Website for The Gregg Housh Show.",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://github.com/greggh/gregghoush#readme",
-  "config": {
-    "input": "src/",
-    "intermediate": "tmp/",
-    "output": "dist/",
-    "cache": ".cache/"
-  },
   "scripts": {
-    "clean": "rimraf $npm_package_config_output* $npm_package_config_cache*",
-    "parcel:watch": "parcel src/index.html",
-    "sitemap:build": "npx sitemap-static --prefix=https://gregghoush.com/ $npm_package_config_output > $npm_package_config_output/sitemap.xml",
-    "parcel:build": "parcel build $npm_package_config_input*.html --out-dir $npm_package_config_output && cp ./src/assets/* $npm_package_config_output",
-    "watch": "run-s clean parcel:watch",
-    "build": "cross-env TARGET_ENV=production run-s clean parcel:build sitemap:build"
+    "start": "eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css --o _site/style.css"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.0",
-    "alpinejs": "^2.7.0",
-    "postcss": "^8.1.1",
-    "tailwindcss": "^1.8.10"
+    "@fortawesome/fontawesome-free": "^5.15.0"
   },
   "devDependencies": {
-    "@astronomersiva/sitemap-static": "^1.1.0",
-    "@parcel/optimizer-htmlnano": "^2.0.0-alpha.3",
+    "@11ty/eleventy": "^0.11.0",
     "@tailwindcss/custom-forms": "^0.2.1",
-    "autoprefixer": "^9.0.0",
+    "alpinejs": "^2.6.0",
     "cross-env": "^7.0.2",
+    "html-minifier": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
-    "parcel-optimizer-friendly-urls": "^0.1.0",
-    "postcss-modules": "^3.2.2",
-    "rimraf": "^3.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/greggh/gregghoush.git"
-  },
-  "bugs": {
-    "url": "https://github.com/greggh/gregghoush/issues"
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "^1.8.10"
   }
 }
