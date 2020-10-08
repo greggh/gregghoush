@@ -1,7 +1,14 @@
 const htmlmin = require("html-minifier");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://gregghoush.com",
+    },
+  });
 
   eleventyConfig.setTemplateFormats(["md", "njk"]);
 
