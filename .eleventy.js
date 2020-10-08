@@ -10,6 +10,8 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  eleventyConfig.setDataDeepMerge(true);
+
   eleventyConfig.setTemplateFormats(["md", "njk"]);
 
   eleventyConfig.addWatchTarget("./_tmp/style.css");
