@@ -16,9 +16,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
 
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
-  });
+  eleventyConfig.addTransform("minify", require("./transforms/minify"));
+
+  // eleventyConfig.addPassthroughCopy({
+  //   "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+  // });
 
   eleventyConfig.addPassthroughCopy("src/images");
 
