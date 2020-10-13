@@ -1,7 +1,7 @@
 {
   "title": "The Gregg Housh Show - Politics & Activism",
   "url": "https://gregghoush.com",
-  "default_social_image": "/images/gregg-housh-show-share-image.png",
+  "default_social_image": "https://gregghoush.com/images/gregg-housh-show-share-image.png",
   "description": "Official site of The Gregg Housh Show, a live-streamed show Monday-Thursday night where we seek not only to inform but to inspire you to action.",
   "feed": {
     "subtitle": "Official site of The Gregg Housh Show, a live-streamed show Monday-Thursday night where we seek not only to inform but to inspire you to action.",

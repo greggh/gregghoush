@@ -1,71 +1,55 @@
 ---
-layout: default.njk
-title: The Gregg Housh Show - Contact
+layout: inner-page.njk
+title: Contact
+subtitle: Want to come on the show? A sponsor looking to join the team?
 description: Official site of The Gregg Housh Show. Contact me if you're hoping to be on the show or want to sponsor me. For anything else, surprise me.
 ---
 
-<section
-class="w-full mx-auto text-center pt-24"
->
-	<h1
-	  class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
-	>
-	  Contact
-	</h1>
-	<div class="w-full">
-	  <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+<div class="container mx-auto text-left flex justify-center items-center">
+	<form
+	name="contact"
+	method="POST"
+	data-netlify="true"
+	class="md:w-1/2 w-full px-12 md:px-0"
+  >
+	<div class="pb-4">
+	  <input
+		class="form-input w-full"
+		type="text"
+		name="name"
+		placeholder="Name"
+	  />
 	</div>
-	
-	<h3 class="my-8 px-12 text-3xl font-extrabold text-gray-200">
-		Want to come on the show? A sponsor looking to join the team?
-	</h3>
-	
-	<div class="container mx-auto text-left flex justify-center items-center">
-		<form
-		name="contact"
-		method="POST"
-		data-netlify="true"
-		class="md:w-1/2 w-full px-12 md:px-0"
+	<div class="pb-4">
+	  <input
+		class="form-input w-full"
+		type="email"
+		name="email"
+		placeholder="Email"
+	  />
+	</div>
+	<div class="pb-4">
+	  <input
+		class="form-input w-full"
+		type="text"
+		name="subject"
+		placeholder="Subject"
+	  />
+	</div>
+		<div class="pb-12">
+	  <textarea
+		class="form-textarea w-full"
+		name="message"
+		placeholder="Message"
+	  ></textarea>
+	</div>
+	<div class="flex justify-center items-center">
+	  <button
+		type="submit"
+		class="inline-block hover:bg-opacity-75 bg-gray-400 text-gray-800 font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48"
 	  >
-		<div class="pb-4">
-		  <input
-			class="form-input w-full"
-			type="text"
-			name="name"
-			placeholder="Name"
-		  />
-		</div>
-		<div class="pb-4">
-		  <input
-			class="form-input w-full"
-			type="email"
-			name="email"
-			placeholder="Email"
-		  />
-		</div>
-		<div class="pb-4">
-		  <input
-			class="form-input w-full"
-			type="text"
-			name="subject"
-			placeholder="Subject"
-		  />
-		</div>
-			<div class="pb-12">
-		  <textarea
-			class="form-textarea w-full"
-			name="message"
-			placeholder="Message"
-		  ></textarea>
-		</div>
-		<div class="flex justify-center items-center">
-		  <button
-			type="submit"
-			class="inline-block hover:bg-opacity-75 bg-gray-400 text-gray-800 font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48"
-		  >
-			<i class="fas fa-paper-plane"></i> <span class="ml-2">Send</span>
-		  </button>
-		</div>
-	  </form>					
-	</div>  
-</section>
+		<i class="fas fa-paper-plane"></i> <span class="ml-2">Send</span>
+	  </button>
+	</div>
+  </form>					
+</div>  

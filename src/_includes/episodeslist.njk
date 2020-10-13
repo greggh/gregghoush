@@ -1,0 +1,57 @@
+<section class="pt-4 md:pt-12">
+  <div class="container max-w-5xl mx-auto">
+    <h1
+      class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
+    >
+      {{ title }}
+    </h1>
+    <div class="w-full mb-8">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+    </div>
+    <p class="text-3xl leading-tight text-center text-gray-200 mx-24 mb-12">
+      {{ subtitle }}
+    </p>
+    <div class="text-gray-100 text-xl px-12 mb-24 w-full">
+      {% for episode in episodes %}
+      <a href="{{ episode.url | url }}">
+        <div
+          class="flex-initial m-4 w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg"
+        >
+          <a
+            href="{{ episode.url | url }}"
+            class="flex items-center h-32 md:h-40"
+          >
+            <div
+              class="w-3/12 md:w-1/6 px-8 text-center border-r-2 h-full flex flex-col items-center justify-center"
+            >
+              <p class="text-3xl md:text-5xl leading-tight">
+                #{{ episode.data.number }}
+              </p>
+              <p class="text-lg md:text-xl leading-tight">
+                {{ episode.data.air_date | episodeShortDate }}
+              </p>
+              <p class="text-sm md:text-lg leading-tight">
+                {{ episode.data.air_date | episodeYearDate }}
+              </p>
+            </div>
+            <div
+              class="w-6/12 md:w-3/6 px-8 flex flex-wrap items-center text-grey-100"
+            >
+              <p class="font-bold text-lg md:text-4xl">
+                {{ episode.data.title }}
+              </p>
+              <p class="text-sm md:text-lg">{{ episode.data.short_desc }}</p>
+            </div>
+            <div
+              class="w-3/12 md:w-2/6 border-l-2 p-4 h-full flex justify-center items-center"
+            >
+              <img src="{{ episode.data.thumbnail }}" />
+            </div>
+          </a>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

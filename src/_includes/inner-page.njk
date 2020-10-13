@@ -1,0 +1,28 @@
+---
+layout: default.njk
+---
+
+<section class="pt-4 md:pt-12">
+  <div class="container max-w-5xl mx-auto">
+	<h1
+	  class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
+	>
+	  {{ title }}
+	</h1>
+	<div class="w-full mb-8">
+	  <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+	</div>
+	{% if subtitle %}
+	<p class="text-3xl leading-tight text-center text-gray-200 mb-12">
+	  {{ subtitle }}
+	</p>
+	{% endif %}
+	{% block content %}
+	  {{ content | safe }}
+	{% endblock %}
+  </div>
+</section>
+
+<div class="text-center text-2xl text-gray-100 mb-24 mt-12">
+	<a href="/">[  Back to Stream ]</a>
+</div>

@@ -1,0 +1,18 @@
+---
+permalink: /tags/
+layout: inner-page.njk
+title: "Tags"
+subtitle: "Use tags to find the episode you're looking for."
+description: "Official site of The Gregg Housh Show. Tags list."
+---
+
+<div class="flex flex-wrap items-center justify-center">
+  {% for tag in collections.tagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{%
+  endset %}
+  <a
+    href="{{ tagUrl | url }}"
+    class="pill bg-gray-600 text-gray-200 rounded-full px-8 text-lg font-bold mr-2 py-4 hover:bg-gray-200 hover:text-gray-800"
+    >{{ tag }}</a
+  >
+  {% endfor %}
+</div>

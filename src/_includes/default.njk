@@ -1,3 +1,6 @@
+{# If we're on an episode page change the social share image #} {% if youtube_id
+%} {% set social_share_image = "https://img.youtube.com/vi/" + youtube_id +
+"/maxresdefault.jpg" %} {% endif %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +20,18 @@
     <meta name="Distribution" content="world" />
     <meta name="Language" content="English" />
     <meta http-equiv="Content-Language" content="en-US" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link
+      rel="alternate"
+      href="{{ metadata.feed.path | url }}"
+      type="application/atom+xml"
+      title="{{ metadata.title }}"
+    />
+    <link
+      rel="alternate"
+      href="{{ metadata.jsonfeed.path | url }}"
+      type="application/json"
+      title="{{ metadata.title }}"
+    />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -45,56 +59,42 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Primary Meta Tags -->
-    <title>{{ title }}</title>
-      
-    <meta name="description" content="{{ description }}"/>
+    <title>The Gregg Housh Show - {{ title }}</title>
+
+    <meta name="description" content="{{ description }}" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ metadata.url }}{{ page.url | url}}" />
-    <meta
-      property="og:title"
-      content="{{ title }}"
-    />
-    <meta
-      property="og:description"
-      content="{{ description }}"
-    />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
     <meta
       property="og:image"
-      content="{{ metadata.url }}{{ metadata.default_social_image }}"
+      content="{% if social_share_image %} {{ social_share_image }} {% else %} {{ metadata.default_social_image }} {% endif %}"
     />
     <meta property="fb:app_id" content="367457277767670" />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="{{ metadata.url }}{{ page.url | url }}" />
     <meta
-      property="twitter:title"
-      content="{{ title }}"
+      property="twitter:url"
+      content="{{ metadata.url }}{{ page.url | url }}"
     />
-    <meta
-      property="twitter:description"
-      content="{{ description }}"
-    />
+    <meta property="twitter:title" content="{{ title }}" />
+    <meta property="twitter:description" content="{{ description }}" />
     <meta
       property="twitter:image"
-      content="{{ metadata.url }}{{ metadata.default_social_image }}"
+      content="{% if social_share_image %} {{ social_share_image }} {% else %} {{ metadata.default_social_image }} {% endif %}"
     />
-    <link rel="stylesheet" href="/style.css?v={% version %}"/>
+    <link rel="stylesheet" href="/style.css?v={% version %}" />
+    <link rel="stylesheet" href="/css/all.min.css?v={% version %}" />
     {% block head %}{% endblock %}
   </head>
-  <body class="bg-gradient-to-br from-gray-700 to-black leading-relaxed tracking-wide flex flex-col">
-    {% include "nav.njk" %}
+  <body
+    class="bg-gradient-to-br from-gray-700 to-black leading-relaxed tracking-wide flex flex-col min-h-screen"
+  >
+    {% include "causes.njk" %} {% include "nav.njk" %} {% block content %} {{
+    content | safe }} {% endblock %}
 
-    {% block content %}
-      {{ content | safe }}
-    {% endblock %}
-
-    {% if page.url != '/' %}
-      <div class="text-center text-2xl text-gray-100 mb-24 mt-12">
-        <a href="/">[  Back to Stream ]</a>
-      </div>
-    {% endif %}
     <section class="bg-twitch w-full mx-auto text-center py-24">
       <h2
         class="w-full mb-8 text-5xl font-black leading-tight text-center text-white"
@@ -104,11 +104,11 @@
       <div class="w-full mb-8">
         <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
       </div>
-  
+
       <h3 class="my-8 text-3xl font-extrabold text-gray-200">
         If you want me to eat, stay alive, and keep making the show, subscribe!
       </h3>
-  
+
       <a
         class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border"
         href="https://www.twitch.tv/subs/gregghoush"
@@ -123,7 +123,7 @@
         ><i class="fab fa-twitch"></i> <span class="ml-2">Tip</span>
       </a>
     </section>
-    
+
     <!--Footer-->
     <footer class="py-24 md:py-2">
       <div class="container mx-auto mt-4 px-8">
@@ -178,9 +178,16 @@
           <div class="flex-1 text-center mb-4 md:mb-0">
             <a
               class="uppercase underline font-bold text-gray-200 md:mb-6"
-              href="/"
+              href="https://shop.spreadshirt.com/the-gregg-housh-show/"
               target="_blank"
-              >Merch</a
+              >Merch Shop</a
+            >
+          </div>
+          <div class="flex-1 text-center mb-4 md:mb-0">
+            <a
+              class="uppercase underline font-bold text-gray-200 md:mb-6"
+              href="/episodes/"
+              >Episodes</a
             >
           </div>
           <div class="flex-1 text-center">
@@ -189,10 +196,11 @@
               href="/privacy-policy/"
               >Privacy Policy</a
             >
-            </div>
           </div>
+        </div>
+      </div>
     </footer>
     <script src="/js/site.js?v={% version %}"></script>
   </body>
-  </html>
+</html>
   

@@ -1,81 +1,92 @@
 <nav
-	class="flex items-center justify-between flex-wrap p-6 z-10 w-2/3 mx-auto"
-	x-data="{ isOpen: false }"
-	@keydown.escape="isOpen = false"
-	:class="{ 'shadow-lg bg-gray-900' : isOpen , 'bg-transparent' : !isOpen}"
+  class="flex items-center justify-between flex-wrap p-4 z-10 w-full md:w-2/3 mx-auto"
+  x-data="{ isOpen: false }"
+  @keydown.escape="isOpen = false"
+  :class="{ 'shadow-lg bg-gray-900' : isOpen , 'bg-transparent' : !isOpen}"
+>
+  <div class="flex flex-1 items-center text-white mr-6">
+    <a
+      class="text-white no-underline hover:text-white hover:no-underline"
+      href="/"
+    >
+      <img
+        src="/images/gregghoush-white.png"
+        class="w-2/3 md:w-1/2 lg:w-full"
+        alt="The Gregg Housh Show"
+      />
+    </a>
+  </div>
+
+  <!--Toggle button (hidden on large screens)-->
+  <button
+    @click="isOpen = !isOpen"
+    type="button"
+    class="block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+    :class="{ 'transition transform-180': isOpen }"
   >
-	<div class="flex flex-1 items-center text-white mr-6">
-	  <a
-		class="text-white no-underline hover:text-white hover:no-underline"
-		href="/"
-	  >
-		<img
-		  src="/images/gregghoush-white.png"
-		  class="w-2/3 md:w-1/2 lg:w-full"
-		  alt="The Gregg Housh Show"
-		/>
-	  </a>
-	</div>
-	
-	<!--Toggle button (hidden on large screens)-->
-	<button
-	  @click="isOpen = !isOpen"
-	  type="button"
-	  class="block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
-	  :class="{ 'transition transform-180': isOpen }"
-	>
-	  <svg
-		class="h-6 w-6 fill-current"
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 24 24"
-	  >
-		<path
-		  x-show="isOpen"
-		  fill-rule="evenodd"
-		  clip-rule="evenodd"
-		  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-		/>
-		<path
-		  x-show="!isOpen"
-		  fill-rule="evenodd"
-		  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-		/>
-	  </svg>
-	</button>
-	
-	<!--Menu-->
-	<div
-	  class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
-	  :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
-	  @click.away="isOpen = false"
-	  x-show.transition="true"
-	>
-	  <ul
-		class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center"
-	  >
-		<li class="mr-3">
-		  <a
-			class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-picton text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg cursor-not-allowed"
-			@click="isOpen = false"
-			><i class="fab fa-twitch"></i> <span class="ml-2">Subscribe</span>
-		  </a>
-		</li>
-		<li class="mr-3">
-		  <a
-			class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-teal-500 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
-			href="https://streamlabs.com/gregghoush/tip"
-			target="_blank"
-			@click="isOpen = false"
-			><i class="fas fa-donate"></i> <span class="ml-2">Tip</span>
-		  </a>
-		</li>
-		<li class="mr-3">
-		  <a
-			class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-red-600 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg cursor-not-allowed"
-			@click="isOpen = false"
-			><i class="fas fa-tshirt"></i> <span class="ml-2">Merch</span>
-		  </a>
-		</li>
-	  </ul>
-	</div>
+    <svg
+      class="h-6 w-6 fill-current"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        x-show="isOpen"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+      />
+      <path
+        x-show="!isOpen"
+        fill-rule="evenodd"
+        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+      />
+    </svg>
+  </button>
+
+  <!--Menu-->
+  <div
+    class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+    :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
+    @click.away="isOpen = false"
+    x-show.transition="true"
+  >
+    <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+      <li class="mr-3">
+        <a
+          class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-twitch text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
+          href="/episodes/"
+          @click="isOpen = false"
+          ><i class="fas fa-photo-video"></i>
+          <span class="ml-2">Watch Episodes</span>
+        </a>
+      </li>
+      <li class="mr-3">
+        <a
+          class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-picton text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
+          href="https://www.twitch.tv/subs/gregghoush"
+          target="_blank"
+          @click="isOpen = false"
+          ><i class="fab fa-twitch"></i> <span class="ml-2">Subscribe</span>
+        </a>
+      </li>
+      <li class="mr-3">
+        <a
+          class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-teal-500 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
+          href="https://streamlabs.com/gregghoush/tip"
+          target="_blank"
+          @click="isOpen = false"
+          ><i class="fas fa-donate"></i> <span class="ml-2">Tip</span>
+        </a>
+      </li>
+      <li class="mr-3">
+        <a
+          class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-red-600 text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
+          target="_blank"
+          href="https://shop.spreadshirt.com/the-gregg-housh-show/"
+          @click="isOpen = false"
+          ><i class="fas fa-tshirt"></i> <span class="ml-2">Merch Shop</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>

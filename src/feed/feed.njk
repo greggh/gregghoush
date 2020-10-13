@@ -1,0 +1,34 @@
+---
+# Metadata comes from _data/metadata.json
+permalink: "{{ metadata.feed.path | url }}"
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+  {% set absoluteUrl %}{{ metadata.feed.path | url | absoluteUrl(metadata.url)
+  }}{% endset %}
+  <link href="{{ absoluteUrl }}" rel="self" />
+  <link href="{{ metadata.url }}" />
+  <updated>{{ collections.episode | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.feed.id }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for episode in collections.episode | reverse %} {% set absolutePostUrl
+  %}{{ episode.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ episode.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ episode.date | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html"
+      >{{ episode.templateContent | htmlToAbsoluteUrls(absolutePostUrl) |
+      striptags }}</content
+    >
+  </entry>
+  {%- endfor %}
+</feed>

@@ -1,0 +1,197 @@
+---
+layout: default.njk
+---
+
+<section class="pt-4 md:pt-12">
+  <div class="container max-w-5xl mx-auto">
+    <h1
+      class="w-full my-2 text-4xl font-black leading-tight text-center text-gray-100 mb-12"
+    >
+      Episode #{{ number }} {{ title }}
+    </h1>
+    <div class="flex items-center w-full mx-auto content-end">
+      <div class="flex flex-1 md:px-0 bg-white w-1/2 rounded shadow-xl border">
+        <div class="flex-1">
+          <div
+            id="{{ youtube_id }}"
+            class="eleventy-plugin-youtube-embed"
+            style="position: relative; width: 100%; padding-top: 56.25%"
+          >
+            <iframe
+              class="rounded"
+              style="
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              width="100%"
+              height="100%"
+              frameborder="0"
+              title="Embedded YouTube video"
+              src="https://www.youtube.com/embed/{{ youtube_id }}"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center justify-center">
+      {% include "share.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="pt-4 md:pt-12">
+  <h2
+    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-4"
+  >
+    About This Episode
+  </h2>
+
+  <div
+    class="container max-w-5xl mx-auto text-gray-200 text-lg flex flex-wrap justify-center p-8 md:p-0"
+  >
+    <div class="flex-initial w-full md:w-3/5 mb-24 md:mb-0 h-full">
+      <div class="w-full md:w-11/12 flex justify-between">
+        <div class="inline text-lg md:text-xl mb-4 font-bold text-left">
+          Episode #{{ number }} {{ title }}
+        </div>
+        <div class="inline text-lg md:text-xl mb-4 font-bold text-right">
+          {{ air_date | episodeLongDate }}
+        </div>
+      </div>
+      <div class="w-full md:w-11/12 mb-4">
+        <div class="h-1 bg-white w-full opacity-50 my-0 py-0"></div>
+      </div>
+      <div class="mb-8">
+        {% block content %} {{ content | safe }} {% endblock %}
+      </div>
+      <div class="w-full md:w-11/12">
+        <div class="mb-4 text-left">
+          <span class="text-lg md:text-xl font-bold mr-2">Tags</span>
+        </div>
+        <div class="w-full mb-4">
+          <div class="h-1 bg-white opacity-50 my-0 py-0"></div>
+        </div>
+        <div class="flex flex-wrap">
+          {% for tag in tags %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset
+          %} {% if tag != "episode" %}
+          <a
+            href="{{ tagUrl | url }}"
+            class="pill bg-gray-600 text-gray-200 rounded-full px-4 text-sm font-bold mr-2 py-2 hover:bg-gray-200 hover:text-gray-800"
+            >{{ tag }}</a
+          >
+          {% endif %} {% endfor %}
+          <span class="text-lg md:text-xl font-bold"
+            ><a href="/tags/" class="text-sm underline"
+              >view sitewide tags</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-initial w-full md:w-1/5 md:pl-4">
+      <h3 class="text-xl mb-4 font-bold">Related Links</h3>
+      <div class="w-full mb-4">
+        <div class="h-1 bg-white w-full opacity-50 my-0 py-0"></div>
+      </div>
+      {% if guest %}
+      <p class="mb-2">Guest: {{ guest }}</p>
+      {% endif %} {% if links %} {% for link in links %}
+      <p class="mb-2"><a href="{{ link }}">{{ link }}</a></p>
+      {% endfor %} {% endif %} {% if social_twitter %}
+      <p class="mb-2"><a href="{{ social_twitter }}">Twitter</a></p>
+      {% endif %} {% if social_facebook %}
+      <p class="mb-2"><a href="{{ social_facebook }}">Facebook</a></p>
+      {% endif %} {% if social_youtube %}
+      <p class="mb-2"><a href="{{ social_youtube }}">Youtube</a></p>
+      {% endif %} {% if social_twitch %}
+      <p class="mb-2"><a href="{{ social_twitch }}">Twitch</a></p>
+      {% endif %} {% if social_other %}
+      <p class="mb-2"><a href="{{ social_other }}">Other Social</a></p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="pt-24 pb-8">
+  <h2
+    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-8"
+  >
+    More Episodes
+  </h2>
+  <div class="w-full mb-8">
+    <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+  </div>
+  {%- set previousEpisode = collections.episode |
+  getPreviousCollectionItem(page) %}
+  <div
+    class="container flex flex-wrap mx-auto items-center justify-center text-gray-200"
+  >
+    <div
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+    >
+      <a
+        {%
+        if
+        previousEpisode
+        %}href="{{ previousEpisode.url | url }}"
+        {%
+        endif
+        %}
+        class="flex items-center h-32 {% if not previousEpisode %} text-gray-900 cursor-not-allowed{% endif %}"
+      >
+        <div
+          class="p-8 w-1/5 border-r-2 text-center h-full flex items-center justify-center {% if not previousEpisode %} border-gray-900{% endif %}"
+        >
+          <i class="fas fa-arrow-left fa-5x"></i>
+        </div>
+        <div class="w-4/5 p-8">
+          <p class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2">
+            {% if previousEpisode %}Previous{% else %}On First Episode{% endif
+            %}
+          </p>
+          <p>{{ previousEpisode.data.title }}</p>
+        </div>
+      </a>
+    </div>
+
+    {%- set nextEpisode = collections.episode | getNextCollectionItem(page) %}
+    <div
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+    >
+      <a
+        {%
+        if
+        nextEpisode
+        %}href="{{ nextEpisode.url | url }}"
+        {%
+        endif
+        %}
+        class="flex items-center h-32 {% if not nextEpisode %} text-gray-900 cursor-not-allowed{% endif %}"
+      >
+        <div class="w-4/5 p-8 text-right">
+          <p class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2">
+            {%- if nextEpisode %}Next{% else %}On Last Episode{% endif %}
+          </p>
+          <p>{{ nextEpisode.data.title }}</p>
+        </div>
+        <div
+          class="p-8 w-1/5 border-l-2 text-center h-full flex items-center justify-center {% if not nextEpisode %} border-gray-900{% endif %}"
+        >
+          <span class=""><i class="fas fa-arrow-right fa-5x"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="text-center text-2xl text-gray-100 mb-24">
+  <a href="/episodes/">[ Back to Episode List ]</a>
+</div>

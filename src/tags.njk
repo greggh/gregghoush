@@ -1,0 +1,25 @@
+---
+subtitle: Watch all of my past episodes / streams.
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - episode
+    - tagList
+  addAllPagesToCollections: true
+layout: default.njk
+eleventyComputed:
+  title: Episodes Tagged {{ tag }}
+  description: Official site of The Gregg Housh Show. All of our episodes tagged {{ tag }}
+permalink: /tags/{{ tag | slug }}/
+---
+
+{% set episodes = collections[ tag ] %} {% include "episodeslist.njk" %}
+
+<div class="text-center text-2xl text-gray-100 mb-24">
+  <a href="{{ '/tags/' | url }}">[ View All Tags ]</a>
+</div>
