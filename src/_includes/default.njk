@@ -1,6 +1,7 @@
 {# If we're on an episode page change the social share image #} {% if youtube_id
 %} {% set social_share_image = "https://img.youtube.com/vi/" + youtube_id +
-"/maxresdefault.jpg" %} {% endif %}
+"/maxresdefault.jpg" %} {% set title = "The Gregg Housh Show - Episode #" +
+number + " - " + title %} {% endif %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,14 +60,20 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Primary Meta Tags -->
-    <title>The Gregg Housh Show - {{ title }}</title>
+    <title>
+      {% if youtube_id %} {{ title }} {% else %} The Gregg Housh Show - {{ title
+      }}{% endif %}
+    </title>
 
     <meta name="description" content="{{ description }}" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ metadata.url }}{{ page.url | url}}" />
-    <meta property="og:title" content="{{ title }}" />
+    <meta
+      property="og:title"
+      content="{% if youtube_id %} {{ title }} {% else %} The Gregg Housh Show - {{ title }}{% endif %}"
+    />
     <meta property="og:description" content="{{ description }}" />
     <meta
       property="og:image"
@@ -79,7 +86,10 @@
       property="twitter:url"
       content="{{ metadata.url }}{{ page.url | url }}"
     />
-    <meta property="twitter:title" content="{{ title }}" />
+    <meta
+      property="twitter:title"
+      content="{% if youtube_id %} {{ title }} {% else %} The Gregg Housh Show - {{ title }}{% endif %}"
+    />
     <meta property="twitter:description" content="{{ description }}" />
     <meta
       property="twitter:image"
