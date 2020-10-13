@@ -12,7 +12,6 @@
     "url": "https://gregghoush.com/"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
     "eleventy-plugin-youtube-embed": "^1.4.6"
   },

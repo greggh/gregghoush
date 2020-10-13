@@ -150,7 +150,9 @@ layout: default.njk
         <div
           class="p-8 w-1/5 border-r-2 text-center h-full flex items-center justify-center {% if not previousEpisode %} border-gray-900{% endif %}"
         >
-          <i class="fas fa-arrow-left fa-5x"></i>
+          <span class="w-20 inline-block align-middle"
+            >{% include 'svg/left-arrow-dark.svg' %}</span
+          >
         </div>
         <div class="w-4/5 p-8">
           <p class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2">
@@ -185,7 +187,11 @@ layout: default.njk
         <div
           class="p-8 w-1/5 border-l-2 text-center h-full flex items-center justify-center {% if not nextEpisode %} border-gray-900{% endif %}"
         >
-          <span class=""><i class="fas fa-arrow-right fa-5x"></i></span>
+          <span class=""
+            ><span class="w-10 inline-block align-middle"
+              >{% include 'svg/right-arrow-dark.svg' %}</span
+            ></span
+          >
         </div>
       </a>
     </div>

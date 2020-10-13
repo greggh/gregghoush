@@ -87,12 +87,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/images");
 
-  eleventyConfig.addPassthroughCopy("src/webfonts");
-
-  eleventyConfig.addPassthroughCopy({
-    "./src/styles/all.min.css": "./css/all.min.css",
-  });
-
   eleventyConfig.addPassthroughCopy({
     "src/assets/*": ".",
   });

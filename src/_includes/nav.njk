@@ -56,7 +56,9 @@
           class="block mx-auto md:mx-2 hover:bg-opacity-75 bg-twitch text-gray-100 font-extrabold rounded my-2 md:my-6 py-4 px-8 shadow-lg"
           href="/episodes/"
           @click="isOpen = false"
-          ><i class="fas fa-photo-video"></i>
+          ><span class="w-4 inline-block align-middle"
+            >{% include 'svg/film-strip-light.svg' %}</span
+          >
           <span class="ml-2">Watch Episodes</span>
         </a>
       </li>
@@ -66,7 +68,10 @@
           href="https://www.twitch.tv/subs/gregghoush"
           target="_blank"
           @click="isOpen = false"
-          ><i class="fab fa-twitch"></i> <span class="ml-2">Subscribe</span>
+          ><span class="w-4 inline-block align-middle"
+            >{% include 'svg/twitch-light.svg' %}</span
+          >
+          <span class="ml-2 align-middle">Subscribe</span>
         </a>
       </li>
       <li class="mr-3">
@@ -75,7 +80,10 @@
           href="https://streamlabs.com/gregghoush/tip"
           target="_blank"
           @click="isOpen = false"
-          ><i class="fas fa-donate"></i> <span class="ml-2">Tip</span>
+          ><span class="w-6 inline-block align-middle"
+            >{% include 'svg/tip-light.svg' %}</span
+          >
+          <span class="ml-2 align-middle">Tip</span>
         </a>
       </li>
       <li class="mr-3">
@@ -84,7 +92,10 @@
           target="_blank"
           href="https://shop.spreadshirt.com/the-gregg-housh-show/"
           @click="isOpen = false"
-          ><i class="fas fa-tshirt"></i> <span class="ml-2">Merch Shop</span>
+          ><span class="w-4 inline-block align-middle"
+            >{% include 'svg/t-shirt-light.svg' %}</span
+          >
+          <span class="ml-2 align-middle">Merch Shop</span>
         </a>
       </li>
     </ul>

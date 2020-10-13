@@ -96,7 +96,6 @@ number + " - " + title %} {% endif %}
       content="{% if social_share_image %} {{ social_share_image }} {% else %} {{ metadata.default_social_image }} {% endif %}"
     />
     <link rel="stylesheet" href="/style.css?v={% version %}" />
-    <link rel="stylesheet" href="/css/all.min.css?v={% version %}" />
     {% block head %}{% endblock %}
   </head>
   <body
@@ -123,14 +122,20 @@ number + " - " + title %} {% endif %}
         class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border"
         href="https://www.twitch.tv/subs/gregghoush"
         target="_blank"
-        ><i class="fab fa-twitch"></i> <span class="ml-2">Subscribe</span>
+        ><span class="w-4 inline-block align-middle"
+          >{% include 'svg/twitch-purple.svg' %}</span
+        >
+        <span class="ml-2">Subscribe</span>
       </a>
       <span class="text-gray-100 px-4"> - OR - </span>
       <a
         class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border"
         href="https://streamlabs.com/gregghoush/tip"
         target="_blank"
-        ><i class="fab fa-twitch"></i> <span class="ml-2">Tip</span>
+        ><span class="w-4 inline-block align-middle"
+          >{% include 'svg/twitch-purple.svg' %}</span
+        >
+        <span class="ml-2">Tip</span>
       </a>
     </section>
 
