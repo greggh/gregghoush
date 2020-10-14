@@ -13,14 +13,11 @@
     </p>
     <div class="text-gray-100 text-xl px-12 mb-24 w-full">
       {% for episode in episodes %}
-      <a href="{{ episode.url | url }}">
+      <a href="{{ episode.url | url }}" aria-labelledby="episodelabel">
         <div
           class="flex-initial m-4 w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg"
         >
-          <a
-            href="{{ episode.url | url }}"
-            class="flex items-center h-32 md:h-40"
-          >
+          <div class="flex items-center h-32 md:h-40">
             <div
               class="w-3/12 md:w-1/6 px-8 text-center border-r-2 h-full flex flex-col items-center justify-center"
             >
@@ -37,7 +34,7 @@
             <div
               class="w-6/12 md:w-3/6 px-8 flex flex-wrap items-center text-grey-100"
             >
-              <p class="font-bold text-lg md:text-4xl">
+              <p id="episodelabel" class="font-bold text-lg md:text-4xl">
                 {{ episode.data.title }}
               </p>
               <p class="text-sm md:text-lg">{{ episode.data.short_desc }}</p>
@@ -47,7 +44,7 @@
             >
               <img src="{{ episode.data.thumbnail }}" />
             </div>
-          </a>
+          </div>
         </div>
       </a>
       {% endfor %}

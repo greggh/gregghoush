@@ -138,6 +138,8 @@ layout: default.njk
       class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
     >
       <a
+        role="button"
+        aria-labelledby="previousbutton"
         {%
         if
         previousEpisode
@@ -155,7 +157,10 @@ layout: default.njk
           >
         </div>
         <div class="w-4/5 p-8">
-          <p class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2">
+          <p
+            id="previousbutton"
+            class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2"
+          >
             {% if previousEpisode %}Previous{% else %}On First Episode{% endif
             %}
           </p>
@@ -169,6 +174,8 @@ layout: default.njk
       class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
     >
       <a
+        role="button"
+        aria-labelledby="nextbutton"
         {%
         if
         nextEpisode
@@ -179,7 +186,10 @@ layout: default.njk
         class="flex items-center h-32 {% if not nextEpisode %} text-gray-900 cursor-not-allowed{% endif %}"
       >
         <div class="w-4/5 p-8 text-right">
-          <p class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2">
+          <p
+            id="nextbutton"
+            class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2"
+          >
             {%- if nextEpisode %}Next{% else %}On Last Episode{% endif %}
           </p>
           <p>{{ nextEpisode.data.title }}</p>
