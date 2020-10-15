@@ -28,7 +28,7 @@ function initSearch() {
 	  if (!this.query) {
 		return;
 	  }
-	  fetch("https://gregghoush/search.json")
+	  fetch("https://gregghoush.com/search.json")
 		.then(res => res.json())
 		.then(data => {
 		  fuse = new Fuse(data.episodes, {
