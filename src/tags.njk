@@ -17,6 +17,21 @@ eleventyComputed:
   description: Official site of The Gregg Housh Show. All of our episodes tagged {{ tag }}
 permalink: /tags/{{ tag | slug }}/
 ---
+<section class="pt-4 md:pt-12">
+  <div class="container max-w-5xl mx-auto">
+    <h1
+      class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
+    >
+      {{ title }}
+    </h1>
+    <div class="w-full mb-8">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+    </div>
+    <p class="text-3xl leading-tight text-center text-gray-200 mx-24 mb-12">
+      {{ subtitle }}
+    </p>
+  </div>
+</section>
 
 {% set episodes = collections[ tag ] %} {% include "episodeslist.njk" %}
 

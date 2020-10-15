@@ -1,21 +1,10 @@
-<section class="pt-4 md:pt-12">
+<section>
   <div class="container max-w-5xl mx-auto">
-    <h1
-      class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
-    >
-      {{ title }}
-    </h1>
-    <div class="w-full mb-8">
-      <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
-    </div>
-    <p class="text-3xl leading-tight text-center text-gray-200 mx-24 mb-12">
-      {{ subtitle }}
-    </p>
     <div class="text-gray-100 text-xl px-12 mb-24 w-full">
       {% for episode in episodes %}
       <a href="{{ episode.url | url }}" aria-labelledby="episodelabel">
         <div
-          class="flex-initial m-4 w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg"
+          class="flex-initial w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg"
         >
           <div class="flex items-center h-32 md:h-40">
             <div

@@ -22,6 +22,14 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromISO(airDate).toFormat("yyyy");
   });
 
+  eleventyConfig.addFilter("toJSON", function (obj) {
+    return JSON.stringify(obj);
+  });
+
+  eleventyConfig.addFilter("searchExcerpt", function (text) {
+    return text.substring(0, 5000);
+  });
+
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
       hostname: "https://gregghoush.com",

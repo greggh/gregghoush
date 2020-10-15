@@ -1,0 +1,22 @@
+---
+layout: false
+permalink: /search.json
+eleventyExcludeFromCollections: true
+---
+
+{
+	"episodes": [
+	{%- for ep in collections.episode %}
+	{%- if ep.data.excludeFromSearch %}{% else %}
+		{
+			"url": "{{ metadata.url }}{{ ep.data.page.url }}",
+			"number":"{{ ep.data.number }}",			
+			"title": "{{ ep.data.title | toJSON }}",
+			"date":"{{ ep.date }}",
+			"text": {{ ep.templateContent | striptags(true) | toJSON | safe }},
+			"guest":"{{ ep.data.guest }}"
+		}{% if loop.revindex0 != 0 %},{% endif %}
+	{%- endif %}
+	{%- endfor %}
+	]
+}
