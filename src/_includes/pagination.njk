@@ -2,7 +2,7 @@
 <section>
   <div class="container max-w-5xl mx-auto">
 <nav aria-labelledby="ghs-pagination" class="mb-24">
-	<h2 id="ghs-pagination" class="text-2xl leading-tight text-center text-gray-200 mb-8">More Episodes</h2>
+	<h2 id="ghs-pagination" class="text-2xl leading-tight text-center text-gray-200 mb-8">More {{ pagination_title }}</h2>
 	<ul class="flex items-center justify-center">
 		
 		{% if page.url != pagination.href.first %}
@@ -19,7 +19,7 @@
 		<a class="flex items-center" href="{{ pagination.href.previous }}">				
 		{% endif %}
 		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.previous %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
-			<span class="mx-1"><i class="fas fa-arrow-left"></i></span>
+			<span class="mx-1">&lt;</span>
 		</li>
 		{% if pagination.href.previous %}
 		</a>
@@ -77,7 +77,7 @@
 		<a class="flex items-center" href="{{ pagination.href.next }}">
 		{% endif %}		
 		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.next %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
-			<span class="mx-1"><i class="fas fa-arrow-right"></i></span>
+			<span class="mx-1">&gt;</span>
 		</li>
 		{% if pagination.href.next %}
 		</a>

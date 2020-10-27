@@ -3,12 +3,14 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const luxon = require("luxon");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 let DateTime = luxon.DateTime;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter("episodeLongDate", (airDate) => {
     return DateTime.fromISO(airDate).toLocaleString(DateTime.DATE_FULL);
@@ -36,6 +38,15 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  let markdownIt = require("markdown-it");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+  };
+
+  eleventyConfig.setLibrary("md", markdownIt(options));
+
   eleventyConfig.addPlugin(embedYouTube, {
     // just an example, see default values below:
     lite: false,
@@ -43,8 +54,6 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setDataDeepMerge(true);
-
-  eleventyConfig.setTemplateFormats(["md", "njk"]);
 
   eleventyConfig.addWatchTarget("./_tmp/style.css");
 
@@ -54,11 +63,24 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addTransform("minify", require("./transforms/minify"));
 
+  eleventyConfig.addFilter("hasTag", function (arr, str) {
+    return arr.includes(str);
+  });
+
   eleventyConfig.addCollection("episodes", (collection) => {
     const episodes = collection
       .getFilteredByGlob("src/episode/*.md")
       .sort((a, b) => {
         return Number(b.data.number) - Number(a.data.number);
+      });
+    return episodes;
+  });
+
+  eleventyConfig.addCollection("posts", (collection) => {
+    const episodes = collection
+      .getFilteredByGlob("src/post/*.md")
+      .sort((a, b) => {
+        return b.date - a.date;
       });
     return episodes;
   });
@@ -124,5 +146,9 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
     },
+    templateFormats: ["njk", "md"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    passthroughFileCopy: true,
   };
 };

@@ -1,0 +1,167 @@
+---
+layout: default.njk
+---
+
+<section class="pt-4 md:pt-12">
+  <div class="container max-w-5xl mx-auto">
+  <h1
+    class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
+  >
+    {{ title }}
+  </h1>
+  <div class="w-full mb-8">
+    <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+  </div>
+  {% if subtitle %}
+  <p class="text-3xl leading-tight text-center text-gray-200 my-2">
+    {{ subtitle }}
+  </p>
+  {% endif %}
+  </div>
+</section>
+
+<section class="pt-4 md:pt-12">
+<div class="container max-w-5xl mx-auto">
+  {% if thumbnail %}
+  <div class="mx-auto mb-12 flex items-center justify-center">
+    <img
+      src="{{ thumbnail }}"
+      alt="The Gregg Housh Show Schedule"
+      class="rounded border-gray-200 border w-5/6 md:w-auto"
+    />
+  </div>
+  {% endif %}
+  <div class="flex items-center justify-center mb-12">
+    {% include "share-post.njk" %}
+  </div>
+  <div class="text-xl md:text-2xl mb-12 font-bold text-center text-gray-200">
+    {{ date | episodeLongDate }}
+  </div>
+  <div class="w-full text-gray-200 text-xl block px-12 md:px-0 post-content">
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+  </div>
+  <h2 class="w-full text-2xl md:text-4xl font-black leading-tight text-center text-gray-100 my-8">Be awesome and share this post!</h2>
+
+  <div class="flex items-center justify-center">
+    {% include "share-post.njk" %}
+  </div>
+</div>
+</section>
+
+<section class="pt-24 pb-8">
+  <h2
+    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-8"
+  >
+    More Posts
+  </h2>
+  <div class="w-full mb-8">
+    <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+  </div>
+  {%- set previousPost = collections.posts |
+  getNextCollectionItem(page) %}
+  <div
+    class="container flex flex-wrap mx-auto items-center justify-center text-gray-200"
+  >
+    <div
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+    >
+      <a
+        role="button"
+        aria-labelledby="previousbutton"
+        {%
+        if
+        previousPost
+        %}href="{{ previousPost.url | url }}"
+        {%
+        endif
+        %}
+        class="flex items-center h-32 {% if not previousPost %} text-gray-900 cursor-not-allowed{% endif %}"
+      >
+        <div
+          class="p-8 w-1/5 border-r-2 text-center h-full flex items-center justify-center {% if not previousPost %} border-gray-900{% endif %}"
+        >
+          <span class="w-20 inline-block align-middle"
+            >{%- if previousPost %}{% include 'svg/left-arrow-light.svg' %}{% else %}{% include 'svg/left-arrow-dark.svg' %}{% endif %}</span
+          >
+        </div>
+        <div class="w-4/5 p-8">
+          <p
+            id="previousbutton"
+            class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2"
+          >
+            {% if previousPost %}Previous{% else %}On First Post{% endif
+            %}
+          </p>
+          <p>{{ previousPost.data.title }}</p>
+        </div>
+      </a>
+    </div>
+
+    {%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
+    <div
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+    >
+      <a
+        role="button"
+        aria-labelledby="nextbutton"
+        {%
+        if
+        nextPost
+        %}href="{{ nextPost.url | url }}"
+        {%
+        endif
+        %}
+        class="flex items-center h-32 {% if not nextPost %} text-gray-900 cursor-not-allowed{% endif %}"
+      >
+        <div class="w-4/5 p-8 text-right">
+          <p
+            id="nextbutton"
+            class="text-grey-100 font-bold text-4xl leading-none mb-2 mt-2"
+          >
+            {%- if nextPost %}Next{% else %}On Last Post{% endif %}
+          </p>
+          <p>{{ nextPost.data.title }}</p>
+        </div>
+        <div
+          class="p-8 w-1/5 border-l-2 text-center h-full flex items-center justify-center {% if not nextPost %} border-gray-900{% endif %}"
+        >
+          <span class=""
+            ><span class="w-10 inline-block align-middle"
+              >{%- if nextPost %}{% include 'svg/right-arrow-light.svg' %}{% else %}{% include 'svg/right-arrow-dark.svg' %}{% endif %}</span
+            ></span
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pt-12">
+  <div class="container max-w-5xl mx-auto">
+    <h2
+    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-8"
+    >
+      Comments
+    </h2>
+    <div class="w-full mb-8">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+    </div>
+
+    <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
+    <div id="fastcomments-widget"></div>
+    <script>
+        window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+            tenantId: 'Epsj-IXWtm',
+            hasDarkBackground: true,
+            pageTitle: '{{ title }}',
+            noImageUploads: true
+        });
+    </script>
+  </div>
+</section>
+
+<div class="text-center text-2xl text-gray-100 pb-24 pt-4">
+  <a href="/blog/">[ Back to Post List ]</a>
+</div>

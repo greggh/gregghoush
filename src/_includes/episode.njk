@@ -153,7 +153,7 @@ layout: default.njk
           class="p-8 w-1/5 border-r-2 text-center h-full flex items-center justify-center {% if not previousEpisode %} border-gray-900{% endif %}"
         >
           <span class="w-20 inline-block align-middle"
-            >{% include 'svg/left-arrow-dark.svg' %}</span
+            >{%- if previousEpisode %}{% include 'svg/left-arrow-light.svg' %}{% else %}{% include 'svg/left-arrow-dark.svg' %}{% endif %}</span
           >
         </div>
         <div class="w-4/5 p-8">
@@ -199,7 +199,7 @@ layout: default.njk
         >
           <span class=""
             ><span class="w-10 inline-block align-middle"
-              >{% include 'svg/right-arrow-dark.svg' %}</span
+              >{%- if nextEpisode %}{% include 'svg/right-arrow-light.svg' %}{% else %}{% include 'svg/right-arrow-dark.svg' %}{% endif %}</span
             ></span
           >
         </div>

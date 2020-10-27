@@ -1,0 +1,40 @@
+---
+layout: default.njk
+title: Blog
+subtitle: Posts about the site, my life, and upcoming shows.
+description: Official site of The Gregg Housh Show. All of our blog posts!
+pagination_title: Posts
+pagination:
+  data: collections.posts
+  size: 6
+  alias: posts
+---
+<section class="pt-4 md:pt-12 container mx-auto text-center mb-12" x-data="initSearch()">
+  <h1
+	class="w-full my-2 text-5xl font-black leading-tight text-center text-gray-100 mb-8"
+  >
+	{{ title }}
+  </h1>
+  <div class="w-full mb-8">
+	<div class="h-1 mx-auto bg-white w-1/6 opacity-50 my-0 py-0"></div>
+  </div>
+  <p class="text-3xl leading-tight text-center text-gray-200 mx-24 mb-12">
+	{{ subtitle }}
+  </p>
+  <div class="">
+  <input
+	type="search"
+	x-model="query"
+	x-on:keyup="searchPosts()"
+	class="bg-white border border-gray-300 p-2 rounded w-4/5 md:w-1/2"
+	placeholder="Search..."
+  />
+  <div x-show="query" class="bg-white shadow rounded w-4/5 md:w-1/2 mx-auto relative" style="display: none;">
+	<p x-show="loading" class="p-2 m-0">Loading</p>
+	<p x-show="!loading && !resultsHtml" class="p-2 m-0">No results.</p>
+	<div x-show="!loading && resultsHtml" x-html="resultsHtml" class="absolute w-full"></div>
+  </div>
+  </div>
+</section>
+
+{% include "postslist.njk" %} {% include "pagination.njk" %}

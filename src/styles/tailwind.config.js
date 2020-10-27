@@ -25,5 +25,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("@tailwindcss/custom-forms")],
+  plugins: [require("postcss-import"), require("@tailwindcss/custom-forms")],
 };
