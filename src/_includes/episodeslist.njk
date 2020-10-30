@@ -8,9 +8,9 @@
         >
           <div class="flex items-center h-32 md:h-40">
             <div
-              class="w-3/12 md:w-1/6 px-8 text-center border-r-2 h-full flex flex-col items-center justify-center"
+              class="w-3/12 sm:w-1/6 px-8 text-center border-r-2 h-full flex flex-col items-center justify-center"
             >
-              <p class="text-3xl md:text-5xl leading-tight">
+              <p class="text-xl sm:text-3xl md:text-5xl leading-tight">
                 #{{ episode.data.number }}
               </p>
               <p class="text-lg md:text-xl leading-tight">
@@ -21,15 +21,15 @@
               </p>
             </div>
             <div
-              class="w-6/12 md:w-3/6 px-8 flex flex-wrap items-center text-grey-100"
+              class="w-9/12 sm:w-3/6 px-8 flex flex-wrap items-center text-grey-100"
             >
-              <p id="episodelabel" class="font-bold text-lg md:text-4xl">
+              <p id="episodelabel" class="font-bold text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl">
                 {{ episode.data.title }}
               </p>
               <p class="text-sm md:text-lg">{{ episode.data.short_desc }}</p>
             </div>
             <div
-              class="w-3/12 md:w-2/6 border-l-2 p-4 h-full flex justify-center items-center"
+              class="w-3/12 sm:w-2/6 border-l-2 p-4 h-full hidden sm:flex justify-center items-center"
             >
               <img src="{{ episode.data.thumbnail }}" />
             </div>
