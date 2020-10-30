@@ -109,7 +109,7 @@ number + " - " + title %} {% endif %}
     {% include "causes.njk" %} {% include "nav-bar.njk" %} {% block content %} {{
     content | safe }} {% endblock %}
 
-    <section class="bg-twitch w-full mx-auto text-center py-24">
+    <section class="bg-twitch w-full mx-auto text-center py-12 lg:py-24 px-4">
       <h2
         class="w-full mb-8 text-5xl font-black leading-tight text-center text-white"
       >
@@ -124,7 +124,7 @@ number + " - " + title %} {% endif %}
       </h3>
 
       <a
-        class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border"
+        class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border mt-4 sm:mt-0"
         href="https://www.twitch.tv/subs/gregghoush"
         target="_blank"
         ><span class="w-4 inline-block align-middle"
@@ -132,9 +132,9 @@ number + " - " + title %} {% endif %}
         >
         <span class="ml-2">Subscribe</span>
       </a>
-      <span class="text-gray-100 px-4"> - OR - </span>
+      <span class="hidden sm:inline-block text-gray-100 px-4"> - OR - </span>
       <a
-        class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border"
+        class="inline-block mx-auto hover:bg-opacity-75 bg-gray-100 text-twitch font-extrabold text-lg rounded py-4 px-8 shadow-lg w-48 border mt-4 sm:mt-0"
         href="https://streamlabs.com/gregghoush/tip"
         target="_blank"
         ><span class="w-4 inline-block align-middle"
@@ -147,7 +147,7 @@ number + " - " + title %} {% endif %}
 {% include "section-merch.njk" %}
 
     <!--Footer-->
-    <footer class="py-24 md:py-2">
+    <footer class="py-12 lg:py-24 md:py-2">
       <div class="container mx-auto mt-4 px-8">
         <div
           class="w-full flex flex-col md:flex-row justify-center items-center"
