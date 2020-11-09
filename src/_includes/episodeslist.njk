@@ -4,7 +4,7 @@
       {% for episode in episodes %}
       <a href="{{ episode.url | url }}" aria-labelledby="episodelabel">
         <div
-          class="flex-initial w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg"
+          class="flex-initial w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg mb-8"
         >
           <div class="flex items-center h-32 md:h-40">
             <div
@@ -31,7 +31,7 @@
             <div
               class="w-3/12 sm:w-2/6 border-l-2 p-4 h-full hidden sm:flex justify-center items-center"
             >
-              <img src="{{ episode.data.thumbnail }}" />
+              <img src="{{ episode.data.thumbnail }}" style="width: 213px;" />
             </div>
           </div>
         </div>
