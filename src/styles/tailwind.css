@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.episode-content p {
+  @apply mb-8;
+}
+
 .post-content ul {
   @apply list-disc mb-8;
 }
@@ -341,4 +345,3 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
-
