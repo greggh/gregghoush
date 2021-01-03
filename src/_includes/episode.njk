@@ -46,23 +46,20 @@ layout: default.njk
   </div>
 </section>
 
-<section class="pt-4 md:pt-12">
+<section class="pt-4">
   <h2
-    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-4"
+    class="block w-full my-2 text-4xl font-black leading-tight text-center text-gray-200 mb-12"
   >
-    About This Episode
+    {{ air_date | episodeLongDate }}
   </h2>
 
   <div
     class="container max-w-5xl mx-auto text-gray-200 text-lg flex flex-wrap justify-center p-8 md:p-0"
   >
     <div class="flex-initial w-full md:w-3/5 mb-24 md:mb-0 h-full">
-      <div class="w-full md:w-11/12 flex justify-between">
-        <div class="inline text-lg md:text-xl mb-4 font-bold text-left">
+      <div class="w-full md:w-11/12 mb-4">
+        <div class="inline text-lg md:text-xlfont-bold text-left">
           Episode #{{ number }} {{ title }}
-        </div>
-        <div class="inline text-lg md:text-xl mb-4 font-bold text-right">
-          {{ air_date | episodeLongDate }}
         </div>
       </div>
       <div class="w-full md:w-11/12 mb-4">
