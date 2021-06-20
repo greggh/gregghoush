@@ -1,3 +1,5 @@
+const colors = require("../../node_modules/tailwindcss/colors");
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -12,6 +14,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        teal: colors.teal,
         twitch: "#6441a5",
         facebook: "#39569c",
         twitter: "#26a7de",
