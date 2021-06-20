@@ -1,6 +1,6 @@
 {# If we're on an episode page change the social share image #} {% if youtube_id
 %} {% set social_share_image = "https://img.youtube.com/vi/" + youtube_id +
-"/maxresdefault.jpg" %} {% set title = "The Gregg Housh Show - Episode #" +
+"/maxresdefault.jpg" %} {% set title = "Gregg Housh #" +
 number + " - " + title %} {% endif %}
 {% if tags and tags | hasTag('post') %}
   {% if thumbnail %}
@@ -66,7 +66,7 @@ number + " - " + title %} {% endif %}
 
     <!-- Primary Meta Tags -->
     <title>
-      {% if youtube_id %} {{ title }} {% else %} The Gregg Housh Show - {{ title
+      {% if youtube_id %}{{ title }}{% else %}The Gregg Housh Show - {{ title
       }}{% endif %}
     </title>
 
