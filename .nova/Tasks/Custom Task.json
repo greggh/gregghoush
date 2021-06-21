@@ -2,11 +2,11 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "ELEVENTY_PRODUCTION=true npx @11ty\/eleventy && NODE_ENV=production npx postcss src\/styles\/tailwind.css --o _site\/style.css"
+      "script" : "npm run build"
     },
     "run" : {
       "enabled" : true,
-      "script" : "npx @11ty\/eleventy --serve & npx postcss src\/styles\/tailwind.css --o _tmp\/style.css --watch"
+      "script" : "npm run start"
     }
   },
   "identifier" : "2B6F8F41-62AC-4DC5-83A8-DBED59670966"
