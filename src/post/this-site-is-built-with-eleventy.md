@@ -7,7 +7,7 @@ layout: post
 tags: ["post"]
 ---
 
-We're working hard to get the show ready to go. One of the first pieces for me was rebuilding gregghoush.com on some newer technology. I wanted to go for speed and real optimizations. For that, I needed to use a static site generator (the JAMStack). After researching for a few days, I decided to use Eleventy. It's initial simplicity, while allowing me to get as complex as I wanted, was perfect.
+We're working hard to get the show ready to go. One of the first pieces for me was rebuilding [gregghoush.com](https://gregghoush.com) on some newer technology. I wanted to go for speed and real optimizations. For that, I needed to use a static site generator (the JAMStack). After researching for a few days, I decided to use Eleventy. It's initial simplicity, while allowing me to get as complex as I wanted, was perfect.
 
 These are the tools used to build the website you are currently viewing:
 
