@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/_redirects");
 
-  eleventyConfig.addTransform("minify", require("./transforms/minify"));
+  //eleventyConfig.addTransform("minify", require("./transforms/minify"));
 
   eleventyConfig.addFilter("hasTag", function (arr, str) {
     return arr.includes(str);
