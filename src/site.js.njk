@@ -42,9 +42,7 @@ function initSearch() {
     
     if (result.length === 0) { } else { this.resultsHtml = result.map(({ item }) => { 
       return '<a id="searchResults" href="' 
-      + item.url + 
-      '" class="block px-2 py-3 bg-white text-sm text-left border-b border-gray-300 hover:bg-gray-400 hover:no-underline"
-    >Episode #' + item.number + ' - ' + item.title + '</a>'; 
+      + item.url + '" class="block px-2 py-3 bg-white text-sm text-left border-b border-gray-300 hover:bg-gray-400 hover:no-underline">Episode #' + item.number + ' - ' + item.title + '</a>'; 
   }).join(''); } }); }, 250), searchPosts: debounce(function() { this.loading = true; if (!this.query) { return; }
 
     fetch("https://gregghoush.com/search-posts.json") .then(res => res.json()).then(data => { fuse = new Fuse(data.posts, { keys: ['title', 'text'], shouldSort: true, threshold: 0.2 }); 
