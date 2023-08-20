@@ -1,12 +1,8 @@
 {# If we're on an episode page change the social share image #} {% if youtube_id
 %} {% set social_share_image = "https://img.youtube.com/vi/" + youtube_id +
-"/maxresdefault.jpg" %} {% set title = "Gregg Housh Show #" +
-number + " - " + title %} {% endif %}
-{% if tags and tags | hasTag('post') %}
-  {% if thumbnail %}
-    {% set social_share_image = metadata.url + thumbnail %}
-  {% endif %}
-{% endif %}
+"/maxresdefault.jpg" %} {% set title = "Gregg Housh Show #" + number + " - " +
+title %} {% endif %} {% if tags and tags | hasTag('post') %} {% if thumbnail %}
+{% set social_share_image = metadata.url + thumbnail %} {% endif %} {% endif %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -106,8 +102,8 @@ number + " - " + title %} {% endif %}
   <body
     class="bg-gradient-to-br from-gray-700 to-black leading-relaxed tracking-wide flex flex-col min-h-screen"
   >
-    {% include "causes.njk" %} {% include "nav-bar.njk" %} {% block content %} {{
-    content | safe }} {% endblock %}
+    {% include "causes.njk" %} {% include "nav-bar.njk" %} {% block content %}
+    {{ content | safe }} {% endblock %}
 
     <section class="bg-twitch w-full mx-auto text-center py-12 lg:py-24 px-4">
       <h2
@@ -144,7 +140,7 @@ number + " - " + title %} {% endif %}
       </a>
     </section>
 
-{% include "section-merch.njk" %}
+    {% include "section-merch.njk" %}
 
     <!--Footer-->
     <footer class="py-12 lg:py-24 md:py-2">
@@ -228,9 +224,8 @@ number + " - " + title %} {% endif %}
       new Twitch.Embed("twitch-embed", {
         width: "100%",
         height: 696,
-        channel: "gregghoush"
+        channel: "gregghoush",
       });
     </script>
   </body>
 </html>
-  

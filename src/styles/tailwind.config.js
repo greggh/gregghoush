@@ -5,7 +5,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: {
+  content: {
     content: ["_site/**/*.html"],
     options: {
       whitelist: [],
@@ -28,5 +28,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("postcss-import"), require("@tailwindcss/custom-forms")],
+  plugins: [require("postcss-import"), require("@tailwindcss/forms")],
 };
