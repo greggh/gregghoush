@@ -52,8 +52,8 @@ function initSearch() {
     this.loading = false; let result = fuse.search(this.query); 
     
     if (result.length === 0) { } else { this.resultsHtml = result.map(({ item }) => { 
-      return '<a id="searchResults" href="' + item.url + '" class="block px-2 py-3 bg-white text-sm text-left border-b border-gray-300 hover:bg-gray-400 hover:no-underline"
-  >' + item.title + '</a
+      return '<a id="searchResults" href="' + item.url + '" class="block px-2 py-3 bg-white text-sm text-left border-b border-gray-300 hover:bg-gray-400 hover:no-underline"  
+  >' + item.title + '</a'
 >'; }).join(''); } }); }, 250) }; } 
 
 {%- include "../node_modules/alpinejs/dist/cdn.js" -%}
