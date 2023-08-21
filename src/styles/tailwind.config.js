@@ -17,7 +17,7 @@ module.exports = {
         teal: colors.teal,
         twitch: "#6441a5",
         facebook: "#39569c",
-        twitter: "#26a7de",
+        twitter: "#000000",
         instagram: "#F7FAFC",
         youtube: "#ff0100",
         picton: "#49aaf1",
