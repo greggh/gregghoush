@@ -100,12 +100,12 @@ title %} {% endif %} {% if tags and tags | hasTag('post') %} {% if thumbnail %}
     {% block head %}{% endblock %}
   </head>
   <body
-    class="bg-gradient-to-br from-gray-700 to-black leading-relaxed tracking-wide flex flex-col min-h-screen"
+    class="bg-gradient-to-r from-neonpink to-neonblue leading-relaxed tracking-wide flex flex-col min-h-screen"
   >
     {% include "causes.njk" %} {% include "nav-bar.njk" %} {% block content %}
     {{ content | safe }} {% endblock %}
 
-    <section class="bg-twitch w-full mx-auto text-center py-12 lg:py-24 px-4">
+    <section class="border-t-2 w-full mx-auto text-center py-12 lg:py-24 px-4">
       <h2
         class="w-full mb-8 text-5xl font-black leading-tight text-center text-white"
       >

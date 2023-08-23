@@ -1,10 +1,10 @@
 <section>
   <div class="container max-w-5xl mx-auto">
-    <div class="text-gray-100 text-xl px-12 mb-24 w-full">
+    <div class="text-gray-700 text-xl px-12 mb-24 w-full">
       {% for post in posts %}
       <a href="{{ post.url | url }}" aria-labelledby="postlabel">
         <div
-          class="flex-initial w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg mb-8"
+          class="flex-initial w-full overflow-hidden bg-gray-100 rounded-lg h-32 md:h-40 shadow-lg mb-8"
         >
           <div class="flex items-center h-32 md:h-40">
             <div
@@ -31,4 +31,3 @@
     </div>
   </div>
 </section>
-
