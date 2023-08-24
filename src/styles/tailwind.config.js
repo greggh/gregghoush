@@ -23,6 +23,8 @@ module.exports = {
         picton: "#49aaf1",
         neonpink: "#cf3775",
         neonblue: "#5fc5e9",
+        bluesky: "#0560ff",
+        mastodon: "#4d8fd3",
       },
       gradientColorStops: (theme) => ({
         neonpink: "#cf3775",
