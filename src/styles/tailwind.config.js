@@ -3,14 +3,8 @@ const colors = require("../../node_modules/tailwindcss/colors");
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
   },
-  content: {
-    content: ["_site/**/*.html"],
-    options: {
-      whitelist: [],
-    },
-  },
+  content: ["_site/**/*.html"],
   theme: {
     extend: {
       colors: {
@@ -39,6 +33,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [require("postcss-import"), require("@tailwindcss/forms")],
 };
