@@ -8,7 +8,7 @@
 		{% if page.url != pagination.href.first %}
 		<a class="flex items-center" href="{{ pagination.href.first }}">
 		{% endif %}
-			<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if page.url != pagination.href.first %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
+			<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if page.url != pagination.href.first %}border-white hover:bg-darkneonblue hover:text-gray-200 text-gray-200{% else %}bg-darkneonblue text-gray-200 cursor-not-allowed {% endif %}">
 			<span class="mx-1">First</span>
 		</li>
 		{% if page.url != pagination.href.first %}
@@ -18,7 +18,7 @@
 		{% if pagination.href.previous %}
 		<a class="flex items-center" href="{{ pagination.href.previous }}">				
 		{% endif %}
-		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.previous %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
+		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.previous %}border-white hover:bg-darkneonblue hover:text-gray-200 text-gray-200{% else %}bg-darkneonblue text-gray-200 cursor-not-allowed {% endif %}">
 			<span class="mx-1">&lt;</span>
 		</li>
 		{% if pagination.href.previous %}
@@ -28,7 +28,7 @@
 		{% if pagination.pageLinks.length < 6 %}
 			{%- for pageEntry in pagination.pages %}
 				<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-					<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+					<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 						{{ loop.index }}
 					</li>
 				</a>
@@ -41,31 +41,31 @@
 					or page.url == pagination.hrefs[loop.index0 - 1]
 					or page.url == pagination.hrefs[loop.index0 - 2] %}
 					<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 							{{ loop.index }}
 						</li>
 					</a>
 				{% elseif page.url == pagination.href.first and loop.index0 < 5 %}
 					<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 							{{ loop.index }}
 						</li>				
 					</a>	
 				{% elseif page.url == pagination.hrefs[1] and loop.index0 < 5 %}
 					<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 							{{ loop.index }}
 						</li>					
 					</a>	
 				{% elseif page.url == pagination.href.last and loop.index0 > pagination.pageLinks.length - 6 %}
 					<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 							{{ loop.index }}
 						</li>					
 					</a>	
 				{% elseif page.url == pagination.hrefs[pagination.pageLinks.length - 2] and loop.index0 > pagination.pageLinks.length - 6 %}
 					<a class="font-bold" href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-gray-700 hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-gray-700{% endif %}">
+						<li class="text-center w-12 mx-1 px-3 py-2 rounded-lg border text-gray-200 hover:bg-darkneonblue hover:text-gray-200 {% if page.url == pagination.hrefs[ loop.index0 ] %}bg-darkneonblue{% endif %}">
 							{{ loop.index }}
 						</li>				
 					</a>	
@@ -76,7 +76,7 @@
 		{% if pagination.href.next %}
 		<a class="flex items-center" href="{{ pagination.href.next }}">
 		{% endif %}		
-		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.next %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
+		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if pagination.href.next %}border-white hover:bg-darkneonblue hover:text-gray-200 text-gray-200{% else %}bg-darkneonblue text-gray-200 cursor-not-allowed {% endif %}">
 			<span class="mx-1">&gt;</span>
 		</li>
 		{% if pagination.href.next %}
@@ -86,7 +86,7 @@
 		{% if page.url != pagination.href.last %}
 		<a class="flex items-center" href="{{ pagination.href.last }}">
 		{% endif %}		
-		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if page.url != pagination.href.last %}border-white hover:bg-gray-700 hover:text-gray-200 text-gray-200{% else %}border-gray-700 text-gray-700 cursor-not-allowed {% endif %}">
+		<li class="mx-1 px-3 py-2 border rounded-lg font-bold {% if page.url != pagination.href.last %}border-white hover:bg-darkneonblue hover:text-gray-200 text-gray-200{% else %}bg-darkneonblue text-gray-200 cursor-not-allowed {% endif %}">
 			<span class="mx-1">Last</span>
 		</li>
 		{% if page.url != pagination.href.last %}

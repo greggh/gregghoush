@@ -4,7 +4,7 @@
       {% for episode in episodes %}
       <a href="{{ episode.url | url }}" aria-labelledby="episodelabel">
         <div
-          class="flex-initial w-full overflow-hidden bg-gray-600 rounded-lg h-32 md:h-40 shadow-lg mb-8"
+          class="flex-initial w-full overflow-hidden bg-nero rounded-lg h-32 md:h-40 shadow-lg mb-8"
         >
           <div class="flex items-center h-32 md:h-40">
             <div
@@ -20,10 +20,11 @@
                 {{ episode.data.air_date | episodeYearDate }}
               </p>
             </div>
-            <div
-              class="w-9/12 sm:w-3/6 px-8 items-center text-grey-100"
-            >
-              <p id="episodelabel" class="font-bold text-sm sm:text-lg md:text-2xl">
+            <div class="w-9/12 sm:w-3/6 px-8 items-center text-grey-100">
+              <p
+                id="episodelabel"
+                class="font-bold text-sm sm:text-lg md:text-2xl"
+              >
                 {{ episode.data.title }}
               </p>
               <p class="text-sm md:text-lg">{{ episode.data.short_desc }}</p>
@@ -31,7 +32,7 @@
             <div
               class="w-3/12 sm:w-2/6 border-l-2 p-4 h-full hidden sm:flex justify-center items-center"
             >
-              <img src="{{ episode.data.thumbnail }}" style="width: 213px;" />
+              <img src="{{ episode.data.thumbnail }}" style="width: 213px" />
             </div>
           </div>
         </div>
@@ -40,4 +41,3 @@
     </div>
   </div>
 </section>
-
