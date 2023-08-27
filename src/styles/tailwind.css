@@ -6,6 +6,10 @@
   @apply mb-8;
 }
 
+.episode-content ul {
+  @apply list-disc;
+}
+
 .post-content ul {
   @apply list-disc mb-8;
 }

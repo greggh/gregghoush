@@ -69,6 +69,42 @@ eleventyComputed:
       </div>
       <div class="w-full md:w-11/12 mb-4 episode-content">
         {% block content %} {{ content | safe }} {% endblock %}
+
+        <br />
+        <hr />
+        <br />
+
+        <p>
+          To help me survive as I build out the show, please consider
+          subscribing to my Twitch channel:
+        </p>
+
+        <a class="underline" href="https://www.twitch.tv/subs/gregghoush​​"
+          >Click here to Subscribe on Twitch</a
+        >
+        <br />
+
+        <p>Or donating via:</p>
+
+        <a
+          class="underline"
+          href="https://streamelements.com/gregghoush-9ec94/tip​​​​"
+          >Click here to donate!</a
+        >
+
+        <div>
+          <br />
+          <div>CashApp: $GreggHoush</div>
+          <div>Venmo: GreggHoush</div>
+          <div>Bitcoin: 3HJ5sgChsJaEihcSXQCYeea4QYLuE2Tnw4</div>
+          <br />
+        </div>
+
+        <p>If you want some show merch you can check that out here:</p>
+
+        <a class="underline" href="https://store.streamelements.com/gregghoush"
+          >Click here for the merch shop.</a
+        >
       </div>
       <div class="w-full md:w-11/12">
         <div class="mb-4 text-left">
@@ -134,7 +170,7 @@ eleventyComputed:
     class="container flex flex-wrap mx-auto items-center justify-center text-gray-200"
   >
     <div
-      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-darkneonblue rounded-lg h-32 shadow-blue"
     >
       <a
         role="button"
@@ -152,7 +188,8 @@ eleventyComputed:
           class="p-8 w-1/5 border-r-2 text-center h-full flex items-center justify-center {% if not previousEpisode %} border-gray-900{% endif %}"
         >
           <span class="w-20 inline-block align-middle"
-            >{%- if previousEpisode %}{% include 'svg/left-arrow-light.svg' %}{% else %}{% include 'svg/left-arrow-dark.svg' %}{% endif %}</span
+            >{%- if previousEpisode %}{% include 'svg/left-arrow-light.svg' %}{%
+            else %}{% include 'svg/left-arrow-dark.svg' %}{% endif %}</span
           >
         </div>
         <div class="w-4/5 p-8">
@@ -170,7 +207,7 @@ eleventyComputed:
 
     {%- set nextEpisode = collections.episode | getNextCollectionItem(page) %}
     <div
-      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-gray-600 rounded-lg h-32 shadow-blue"
+      class="flex-initial m-4 w-full overflow-hidden md:w-5/12 bg-darkneonblue rounded-lg h-32 shadow-blue"
     >
       <a
         role="button"
@@ -198,7 +235,8 @@ eleventyComputed:
         >
           <span class=""
             ><span class="w-10 inline-block align-middle"
-              >{%- if nextEpisode %}{% include 'svg/right-arrow-light.svg' %}{% else %}{% include 'svg/right-arrow-dark.svg' %}{% endif %}</span
+              >{%- if nextEpisode %}{% include 'svg/right-arrow-light.svg' %}{%
+              else %}{% include 'svg/right-arrow-dark.svg' %}{% endif %}</span
             ></span
           >
         </div>
