@@ -98,6 +98,12 @@ title %} {% endif %} {% if tags and tags | hasTag('post') %} {% if thumbnail %}
     />
     <link rel="stylesheet" href="/style.css?v={% version %}" />
     {% block head %}{% endblock %}
+
+    <script
+      defer
+      data-domain="gregghoush.com"
+      src="https://analytics.st/js/script.js"
+    ></script>
   </head>
   <body
     class="bg-gradient-to-r from-darkneonpink to-darkneonblue leading-relaxed tracking-wide flex flex-col min-h-screen"

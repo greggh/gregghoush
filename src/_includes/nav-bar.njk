@@ -14,6 +14,8 @@
           alt="Gregg Housh Logo"
       /></a>
       <button
+        id="openmenu"
+        aria-label="Open Menu"
         class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline ml-4"
         @click="open = !open"
       >
@@ -70,6 +72,8 @@
       >
       <div @click.away="open = false" class="relative" x-data="{ open: false }">
         <button
+          id="More"
+          aria-label="More"
           @click="open = !open"
           class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-bold text-left bg-gray-200 text-gray-800 rounded-lg lg:w-auto lg:inline lg:mt-0 lg:ml-4 hover:text-gray-200 focus:text-gray-200 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none focus:shadow-outline"
         >
